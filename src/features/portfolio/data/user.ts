@@ -9,9 +9,9 @@ export const USER: User = {
   pronouns: "he/him",
   bio: "Creating with code. Small details matter.",
   flipSentences: [
-    "Creating with code. Small details matter.",
-    "Design Engineer",
+    "Software Engineer",
     "Open Source Contributor",
+    "Creating with code. Small details matter.",
   ],
   address: "India, Junagadh",
   phoneNumber: "+91 9316293722", // E.164 format
