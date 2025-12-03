@@ -2,16 +2,9 @@ export type Project = {
   /** Stable unique identifier (used as list key/anchor). */
   id: string;
   title: string;
-  /**
-   * Project period for display and sorting.
-   * Use "MM.YYYY" format. Omit `end` for ongoing projects.
-   */
-  period: {
-    /** Start date (e.g., "05.2025"). */
-    start: string;
-    /** End date; leave undefined for "Present". */
-    end?: string;
-  };
+  /** Short description or subtitle displayed below the title. */
+  tagline?: string;
+
   /** Public URL (site, repository, demo, or video). */
   link: string;
   /** Tags/technologies for chips or filtering. */
@@ -22,6 +15,5 @@ export type Project = {
   logo?: string;
   /** Whether the project card is expanded by default in the UI. */
   isExpanded?: boolean;
-  /** Whether the project has MDX content for detailed page. */
-  hasDetails?: boolean;
+
 };

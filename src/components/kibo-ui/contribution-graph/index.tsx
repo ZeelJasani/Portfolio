@@ -308,6 +308,7 @@ export const ContributionGraph = ({
       <div
         className={cn("flex w-max max-w-full flex-col gap-2", className)}
         style={{ fontSize, ...style }}
+        suppressHydrationWarning
         {...props}
       />
     </ContributionGraphContext.Provider>
@@ -384,6 +385,7 @@ export const ContributionGraphCalendar = ({
   return (
     <div
       className={cn("max-w-full overflow-x-auto overflow-y-hidden", className)}
+      suppressHydrationWarning
       {...props}
     >
       <svg
@@ -435,6 +437,7 @@ export const ContributionGraphFooter = ({
       "flex flex-wrap gap-1 whitespace-nowrap sm:gap-x-4",
       className
     )}
+    suppressHydrationWarning
     {...props}
   />
 );
@@ -458,11 +461,11 @@ export const ContributionGraphTotalCount = ({
   }
 
   return (
-    <div className={cn("text-muted-foreground", className)} {...props}>
+    <div className={cn("text-muted-foreground", className)} suppressHydrationWarning {...props}>
       {labels.totalCount
         ? labels.totalCount
-            .replace("{{count}}", String(totalCount))
-            .replace("{{year}}", String(year))
+          .replace("{{count}}", String(totalCount))
+          .replace("{{year}}", String(year))
         : `${totalCount} activities in ${year}`}
     </div>
   );
@@ -485,6 +488,7 @@ export const ContributionGraphLegend = ({
   return (
     <div
       className={cn("ml-auto flex items-center gap-[3px]", className)}
+      suppressHydrationWarning
       {...props}
     >
       <span className="mr-1 text-muted-foreground">

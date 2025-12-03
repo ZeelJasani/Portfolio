@@ -1,0 +1,150 @@
+---
+title: Masterji - LMS Platform
+description: A modern, full-stack Learning Management System (LMS) built with cutting-edge web technologies.
+---
+
+Masterji is a modern, full-stack Learning Management System (LMS) built with cutting-edge web technologies. It provides a comprehensive platform for creating, managing, and delivering online courses with advanced features like drag-and-drop course structuring, rich text editing, and secure file management.
+
+## Tech Stack
+
+### Frontend
+- **Framework:** Next.js 15.4.6 (App Router)
+- **Language:** TypeScript 5.0
+- **Styling:** Tailwind CSS 4.0 + CSS Modules
+- **UI Components:** Radix UI + shadcn/ui
+- **State Management:** React Query + Zustand
+- **Forms:** React Hook Form + Zod
+- **Icons:** Lucide React + Tabler Icons
+
+### Backend
+- **Runtime:** Node.js 18+
+- **API:** Next.js API Routes
+- **Authentication:** NextAuth.js (Better Auth)
+- **File Storage:** AWS SDK v3
+- **Email Service:** Resend
+- **Security:** Arcjet
+
+### Database
+- **Primary Database:** PostgreSQL 16
+- **ORM:** Prisma (Type-safe database client)
+- **Migrations:** Version-controlled with Prisma Migrate
+
+### DevOps & Tools
+- **Hosting:** Vercel
+- **CI/CD:** GitHub Actions
+- **Containerization:** Docker
+- **Linting/Formatting:** ESLint + Prettier
+- **Testing:** Jest + Playwright + React Testing Library
+
+## Key Features
+
+- **User Authentication:** Secure login with multiple providers (GitHub, email OTP)
+- **Course Management:** Create and organize courses with chapters and lessons
+- **Rich Content Editor:** Advanced text editing with TipTap integration
+- **File Management:** Secure file uploads with S3-compatible storage
+- **Responsive Design:** Mobile-first approach with modern UI components
+- **Admin Dashboard:** Comprehensive course administration tools
+- **Payment Processing:** Integrated Stripe payment system
+
+## Folder Structure
+
+```
+masterji/
+├── app/                          # Next.js App Router
+│   ├── (auth)/                  # Authentication routes
+│   │   ├── _components/         # Auth-specific components
+│   │   ├── login/               # Login page
+│   │   └── verify-request/      # Email verification
+│   ├── (public)/                # Public routes
+│   │   ├── _components/         # Public components (Navbar, UserDropdown)
+│   │   └── page.tsx             # Landing page
+│   ├── admin/                   # Admin dashboard
+│   │   ├── courses/             # Course management
+│   │   │   ├── _components/     # Admin course components
+│   │   │   ├── [courseId]/      # Dynamic course routes
+│   │   │   │   └── edit/        # Course editing interface
+│   │   │   └── create/          # Course creation
+│   │   └── layout.tsx           # Admin layout
+│   ├── api/                     # API routes
+│   │   ├── auth/                # Authentication endpoints
+│   │   └── s3/                  # File upload/delete endpoints
+│   ├── data/                    # Server-side data functions
+│   │   └── admin/               # Admin-specific data operations
+│   ├── globals.css              # Global styles
+│   └── layout.tsx               # Root layout
+├── components/                   # Reusable UI components
+│   ├── file-uploader/           # File upload components
+│   ├── rich-text-editor/        # TipTap-based text editor
+│   ├── sidebar/                 # Navigation components
+│   └── ui/                      # shadcn/ui components
+├── hooks/                       # Custom React hooks
+├── lib/                         # Utility libraries
+│   ├── generated/               # Prisma generated types
+│   ├── auth.ts                  # Authentication configuration
+│   ├── db.ts                    # Database connection
+│   ├── S3Client.ts              # S3 client configuration
+│   └── zodSchemas.ts            # Data validation schemas
+├── prisma/                      # Database schema and migrations
+│   └── schema.prisma            # Prisma schema definition
+├── public/                      # Static assets
+└── middleware.ts                # Next.js middleware
+```
+
+## Usage
+
+### For Learners
+- **Browse Courses:** Visit the public landing page to explore available courses
+- **User Registration:** Sign up using email or GitHub OAuth
+- **Course Access:** Enroll in courses and track progress
+- **Learning Interface:** Access course content through organized chapters and lessons
+
+### For Instructors/Admins
+- **Admin Access:** Login with admin credentials
+- **Course Creation:** Use the admin dashboard to create new courses
+- **Content Management:** Organize courses into chapters and lessons
+- **Media Upload:** Upload images and videos using the integrated file manager
+- **Course Publishing:** Manage course status (draft, published, archived)
+
+## Key Functionalities
+
+### Authentication & Security
+- **Better Auth:** Modern authentication library with multiple providers
+- **GitHub OAuth:** Social login integration
+
+### Storage & Media
+- **AWS S3:** Scalable file storage for images and videos
+- **Presigned URLs:** Secure, time-limited file access
+
+### Database & ORM
+- **Prisma:** Type-safe database client and migrations
+- **PostgreSQL:** Robust relational database
+
+### Email & Communication
+- **Resend:** Transactional email service for verification
+
+### UI & Components
+- **shadcn/ui:** High-quality, accessible UI components
+- **Radix UI:** Unstyled, accessible component primitives
+- **Tailwind CSS:** Utility-first CSS framework
+
+## Performance & Best Practices
+
+### Optimizations Implemented
+- **Next.js 15:** Latest framework with App Router
+- **Turbopack:** Fast bundler for development
+- **Image Optimization:** Next.js built-in image optimization
+- **Code Splitting:** Automatic route-based code splitting
+- **TypeScript:** Type safety and better developer experience
+
+### Security Best Practices
+- **Input Validation:** Zod schema validation
+- **Rate Limiting:** API protection against abuse
+- **Secure File Uploads:** Presigned URLs and file type validation
+- **Authentication:** Secure session management
+- **Environment Variables:** Proper secret management
+
+### Accessibility
+- **Radix UI:** Built-in accessibility features
+- **Semantic HTML:** Proper HTML structure
+- **Keyboard Navigation:** Full keyboard support
+- **Screen Reader:** ARIA labels and descriptions

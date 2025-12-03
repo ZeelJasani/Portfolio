@@ -1,7 +1,7 @@
 import { CollapsibleList } from "@/components/collapsible-list";
 
 import { CERTIFICATIONS } from "../../data/certifications";
-import { Panel, PanelHeader, PanelTitle, PanelTitleSup } from "../panel";
+import { Panel, PanelHeader, PanelTitle } from "../panel";
 import { CertificationItem } from "./certification-item";
 
 export function Certifications() {
@@ -10,7 +10,7 @@ export function Certifications() {
       <PanelHeader>
         <PanelTitle>
           Certifications
-          <PanelTitleSup>({CERTIFICATIONS.length})</PanelTitleSup>
+
         </PanelTitle>
       </PanelHeader>
 

@@ -178,6 +178,11 @@ export const TECH_STACK = [
         url: "https://expressjs.com/",
     },
     {
+        name: "Go",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
+        url: "https://golang.org/",
+    },
+    {
         name: "PostgreSQL",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
         url: "https://www.postgresql.org/",

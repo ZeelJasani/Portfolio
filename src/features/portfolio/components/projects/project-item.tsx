@@ -1,6 +1,6 @@
+import { ArrowRightIcon, LinkIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRightIcon, InfinityIcon, LinkIcon } from "lucide-react";
 
 import { Icons } from "@/components/icons";
 import { Markdown } from "@/components/markdown";
@@ -27,9 +27,7 @@ export function ProjectItem({
   className?: string;
   project: Project;
 }) {
-  const { start, end } = project.period;
-  const isOngoing = !end;
-  const isSinglePeriod = end === start;
+
 
   return (
     <CollapsibleWithContext defaultOpen={project.isExpanded} asChild>
@@ -56,36 +54,20 @@ export function ProjectItem({
           )}
 
           <div className="flex-1 border-l border-dashed border-edge">
-            <CollapsibleTrigger className="flex w-full items-center gap-4 p-4 pr-2 text-left">
-              <div className="flex-1">
-                <h3 className="mb-1 leading-snug font-medium text-balance">
-                  {project.title}
-                </h3>
+            <div className="flex w-full items-center gap-4 p-4 pr-2 text-left">
+              <CollapsibleTrigger className="flex-1 text-left">
+                <div className="flex-1">
+                  <h3 className="mb-1 leading-snug font-medium text-balance">
+                    {project.title}
+                  </h3>
 
-                <dl className="text-sm text-muted-foreground">
-                  <dt className="sr-only">Period</dt>
-                  <dd className="flex items-center gap-0.5">
-                    <span>{start}</span>
-                    {!isSinglePeriod && (
-                      <>
-                        <span className="font-mono">—</span>
-                        {isOngoing ? (
-                          <>
-                            <InfinityIcon
-                              className="size-4.5 translate-y-[0.5px]"
-                              aria-hidden
-                            />
-                            <span className="sr-only">Present</span>
-                          </>
-                        ) : (
-                          <span>{end}</span>
-                        )}
-                      </>
-                    )}
-                  </dd>
-                </dl>
-              </div>
-
+                  {project.tagline && (
+                    <p className="text-sm text-muted-foreground">
+                      {project.tagline}
+                    </p>
+                  )}
+                </div>
+              </CollapsibleTrigger>
 
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -121,13 +103,15 @@ export function ProjectItem({
                 </TooltipContent>
               </Tooltip>
 
-              <div
-                className="shrink-0 text-muted-foreground [&_svg]:size-4"
-                aria-hidden
-              >
-                <CollapsibleChevronsIcon />
-              </div>
-            </CollapsibleTrigger>
+              <CollapsibleTrigger>
+                <div
+                  className="shrink-0 text-muted-foreground [&_svg]:size-4"
+                  aria-hidden
+                >
+                  <CollapsibleChevronsIcon />
+                </div>
+              </CollapsibleTrigger>
+            </div>
           </div>
         </div>
 

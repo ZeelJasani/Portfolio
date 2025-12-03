@@ -1,0 +1,132 @@
+---
+title: Zyora 3D Interactive Book
+description: A high-performance 3D book implementation built with React Three Fiber and Three.js.
+---
+
+A high-performance 3D book implementation built with React Three Fiber and Three.js, featuring realistic page turning animations and interactive controls.
+
+## Features
+
+- **Realistic 3D Book** with dynamic lighting and shadows
+- **Smooth Page Turning** with physics-based animations
+- **Interactive Controls:**
+    - Orbit controls for 360° viewing
+    - Hover effects on interactive elements
+- **Responsive design** for all device sizes
+- **Customizable Content:**
+    - Easy page content management
+    - Support for custom textures and materials
+    - Configurable book dimensions and appearance
+
+## Technologies
+
+### Core
+- React
+- Three.js
+- React Three Fiber
+- @react-three/drei
+
+### Build & Development
+- Vite
+- Tailwind CSS
+- Jotai for state management
+- Leva for debugging
+
+## Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/your-username/3d-book.git
+cd 3d-book
+```
+
+Install dependencies
+
+```bash
+npm install
+# or
+yarn
+```
+
+Start development server
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open http://localhost:5173 to view in your browser.
+
+## Project Structure
+
+```
+3d-book/
+├── public/                 # Static assets
+│   ├── audios/             # Sound effects (e.g., page turning sounds)
+│   ├── images/             # Image assets
+│   └── textures/           # 3D model textures and materials
+│       ├── book-cover.jpg
+│       ├── book-cover-roughness.jpg
+│       ├── book-back.jpg
+│       └── DSC0*.jpg       # Page textures
+│
+└── src/
+    ├── assets/             # Static assets used in components
+    ├── components/         # React components
+    │   ├── Book.jsx        # Main 3D book implementation
+    │   ├── Experience.jsx  # 3D scene setup and lighting
+    │   └── UI.jsx          # User interface components
+    ├── App.jsx             # Main application component
+    └── main.jsx            # Application entry point
+```
+
+## Book Implementation Details
+
+The book is implemented using Three.js SkinnedMesh for smooth page animations. Key implementation details:
+
+### Page Geometry
+- **Width:** 1.28 units
+- **Height:** 1.71 units (4:3 aspect ratio)
+- **Depth:** 0.003 units
+
+### Animation Parameters
+- Page turning speed controlled by easing functions
+- Customizable curve strength for natural page bending
+- Physics-based page folding simulation
+
+### Materials
+- Realistic paper texture mapping
+- Dynamic shadow casting
+- Custom shaders for page edges and surface details
+
+## Customization
+
+### Changing Book Content
+- Add/update page textures in `public/textures/`
+- Modify the pages array in `UI.jsx` to update content
+
+### Adjusting 3D Parameters
+Edit the following files for specific customizations:
+- **Book.jsx:** Page dimensions, animation parameters
+- **Experience.jsx:** Lighting, camera position, environment
+- **UI.jsx:** Content and navigation controls
+
+## Building for Production
+
+Create production build
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+Preview production build
+
+```bash
+npm run preview
+# or
+yarn preview
+```
