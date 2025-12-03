@@ -8,8 +8,7 @@ import remarkGfm from "remark-gfm";
 import { visit } from "unist-util-visit";
 
 import { CodeCollapsibleWrapper } from "@/components/code-collapsible-wrapper";
-import { ComponentPreview } from "@/components/component-preview";
-import { ComponentSource } from "@/components/component-source";
+
 import {
   Table,
   TableBody,
@@ -28,8 +27,7 @@ import { remarkCodeImport } from "@/lib/remark-code-import";
 import { cn } from "@/lib/utils";
 import type { NpmCommands } from "@/types/unist";
 
-import { CodeBlockCommand } from "./code-block-command";
-import { CodeTabs } from "./code-tabs";
+
 import { CopyButton } from "./copy-button";
 import { FramedImage, YouTubeEmbed } from "./embed";
 import { getIconForLanguageExtension, Icons } from "./icons";
@@ -75,28 +73,16 @@ const components: MDXRemoteProps["components"] = {
     __withMeta__,
     __rawString__,
 
-    __pnpm__,
-    __yarn__,
-    __npm__,
-    __bun__,
+
 
     ...props
   }: React.ComponentProps<"pre"> & {
     __withMeta__?: boolean;
     __rawString__?: string;
   } & NpmCommands) {
-    const isNpmCommand = __pnpm__ && __yarn__ && __npm__ && __bun__;
 
-    if (isNpmCommand) {
-      return (
-        <CodeBlockCommand
-          __pnpm__={__pnpm__}
-          __yarn__={__yarn__}
-          __npm__={__npm__}
-          __bun__={__bun__}
-        />
-      );
-    }
+
+
 
     return (
       <>
@@ -113,10 +99,8 @@ const components: MDXRemoteProps["components"] = {
     );
   },
   code: Code,
-  ComponentPreview,
-  ComponentSource,
   CodeCollapsibleWrapper,
-  CodeTabs,
+
   Steps: (props) => (
     <div
       className="md:ml-3.5 md:border-l md:pl-7.5 prose-h3:text-lg prose-h3:text-wrap"
