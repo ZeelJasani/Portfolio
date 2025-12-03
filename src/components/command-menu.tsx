@@ -68,7 +68,7 @@ const PORTFOLIO_LINKS: CommandLinkItem[] = [
   },
   {
     title: "Certifications",
-    href: "/#certs",
+    href: "/certifications",
     icon: Icons.certificate,
   },
 ];

@@ -1,7 +1,6 @@
 import type { ProfilePage as PageSchema, WithContext } from "schema-dts";
 
 import { About } from "@/features/portfolio/components/about";
-import { Certifications } from "@/features/portfolio/components/certifications";
 import { GitHubContributions } from "@/features/portfolio/components/github-contributions";
 import { Overview } from "@/features/portfolio/components/overview";
 import { ProfileCover } from "@/features/portfolio/components/profile-cover";
@@ -43,9 +42,7 @@ export default function Page() {
         <Separator />
 
         <Projects />
-        <Separator />
 
-        <Certifications />
       </div>
     </>
   );
