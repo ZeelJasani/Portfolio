@@ -5,9 +5,6 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { toast } from "sonner";
 
-import { copyText } from "@/utils/copy";
-
-import { ZeelMark, getMarkSVG } from "./zeel-mark";
 import {
   ContextMenu,
   ContextMenuContent,
@@ -15,6 +12,9 @@ import {
   ContextMenuTrigger,
 } from "@/components/ui/context-menu";
 import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
+import { copyText } from "@/utils/copy";
+
+import { getMarkSVG,ZeelMark } from "./zeel-mark";
 
 export function BrandContextMenu({ children }: { children: React.ReactNode }) {
   const { resolvedTheme } = useTheme();

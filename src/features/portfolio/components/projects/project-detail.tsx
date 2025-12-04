@@ -7,8 +7,8 @@ import Link from "next/link";
 import { Icons } from "@/components/icons";
 import { Tag } from "@/components/ui/tag";
 import { UTM_PARAMS } from "@/config/site";
-import { addQueryParams } from "@/utils/url";
 import { cn } from "@/lib/utils";
+import { addQueryParams } from "@/utils/url";
 
 import type { Project } from "../../types/projects";
 

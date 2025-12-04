@@ -5,7 +5,6 @@ import { DesktopNav } from "@/components/desktop-nav";
 import { MAIN_NAV } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-import { SiteHeaderMark } from "./site-header-mark";
 import { SiteHeaderWrapper } from "./site-header-wrapper";
 import { ThemeToggle } from "./theme-toggle";
 
@@ -24,7 +23,7 @@ export function SiteHeader() {
         "sticky top-0 z-50 max-w-screen overflow-x-hidden bg-background px-2 pt-2",
         "data-[affix=true]:shadow-[0_0_16px_0_black]/8 dark:data-[affix=true]:shadow-[0_0_16px_0_black]",
         "not-dark:data-[affix=true]:**:data-header-container:after:bg-border",
-        "transition-shadow duration-300"
+        "transition-shadow duration-300 group"
       )}
     >
       <div
@@ -36,8 +35,7 @@ export function SiteHeader() {
           href="/"
           aria-label="Home"
         >
-          <SiteHeaderMark />
-          <span className="opacity-0 max-w-0 overflow-hidden transition-all duration-300 data-[affix=true]:opacity-100 data-[affix=true]:max-w-32">
+          <span className="whitespace-nowrap opacity-0 max-w-0 translate-y-2 overflow-hidden text-lg font-bold transition-all duration-300 ease-out group-data-[affix=true]:opacity-100 group-data-[affix=true]:max-w-48 group-data-[affix=true]:translate-y-0">
             Zeel Jasani
           </span>
         </Link>

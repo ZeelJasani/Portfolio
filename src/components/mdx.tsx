@@ -8,7 +8,6 @@ import remarkGfm from "remark-gfm";
 import { visit } from "unist-util-visit";
 
 import { CodeCollapsibleWrapper } from "@/components/code-collapsible-wrapper";
-
 import {
   Table,
   TableBody,
@@ -26,7 +25,6 @@ import { rehypeNpmCommand } from "@/lib/rehype-npm-command";
 import { remarkCodeImport } from "@/lib/remark-code-import";
 import { cn } from "@/lib/utils";
 import type { NpmCommands } from "@/types/unist";
-
 
 import { CopyButton } from "./copy-button";
 import { FramedImage, YouTubeEmbed } from "./embed";
