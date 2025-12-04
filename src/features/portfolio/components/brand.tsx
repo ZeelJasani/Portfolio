@@ -1,5 +1,4 @@
 import { ZeelMark } from "@/components/zeel-mark";
-import { ChanhDaiWordmark } from "@/components/chanhdai-wordmark";
 
 import { Panel, PanelHeader, PanelTitle } from "./panel";
 
@@ -28,7 +27,7 @@ export function Brand() {
         </div>
 
         <div className="screen-line-after flex items-center justify-center pr-8 after:z-1">
-          <ChanhDaiWordmark className="h-6 w-auto sm:h-10" />
+          <span className="text-xl font-bold tracking-tight">Zeel Jasani</span>
         </div>
       </div>
     </Panel>

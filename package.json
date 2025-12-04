@@ -1,24 +1,24 @@
 {
-  "name": "chanhdai.com",
+  "name": "zeel-portfolio",
   "version": "0.1.0",
-  "description": "A minimal, pixel-perfect dev portfolio, component registry, and blog.",
-  "homepage": "https://chanhdai.com",
+  "description": "Personal portfolio of Zeel Jasani",
+  "homepage": "https://zeeljasani.vercel.app",
   "license": "MIT",
   "author": {
-    "name": "Nguyen Chanh Dai",
-    "email": "dai@chanhdai.com",
-    "url": "https://github.com/ncdai"
+    "name": "Zeel Jasani",
+    "email": "jasanizeel487@gmail.com",
+    "url": "https://github.com/ZeelJasani"
   },
   "contributors": [
     {
-      "name": "Nguyen Chanh Dai",
-      "email": "dai@chanhdai.com",
-      "url": "https://github.com/ncdai"
+      "name": "Zeel Jasani",
+      "email": "jasanizeel487@gmail.com",
+      "url": "https://github.com/ZeelJasani"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ncdai/chanhdai.com.git"
+    "url": "git+https://github.com/ZeelJasani/MyPortFolio.git"
   },
   "scripts": {
     "dev": "next dev -p 3000",

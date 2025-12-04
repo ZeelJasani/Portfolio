@@ -13,5 +13,5 @@ export const registryConfig = {
    * @see https://ui.shadcn.com/docs/registry/namespace#url-pattern-system
    */
   namespaceUrl:
-    process.env.REGISTRY_NAMESPACE_URL || "https://chanhdai.com/r/{name}.json",
+    process.env.REGISTRY_NAMESPACE_URL || "https://zeeljasani.vercel.app/r/{name}.json",
 };
