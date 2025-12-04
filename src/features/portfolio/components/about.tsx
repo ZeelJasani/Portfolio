@@ -1,4 +1,7 @@
+import { DownloadIcon } from "lucide-react";
+
 import { Markdown } from "@/components/markdown";
+import { Button } from "@/components/ui/button";
 import { ProseMono } from "@/components/ui/typography";
 import { USER } from "@/features/portfolio/data/user";
 
@@ -15,6 +18,17 @@ export function About() {
         <ProseMono>
           <Markdown>{USER.about}</Markdown>
         </ProseMono>
+
+        {USER.resume && (
+          <div className="mt-6 flex justify-start">
+            <Button asChild variant="outline">
+              <a href={USER.resume} target="_blank" rel="noopener noreferrer">
+                <DownloadIcon className="mr-2 size-4" />
+                Download Resume/CV
+              </a>
+            </Button>
+          </div>
+        )}
       </PanelContent>
     </Panel>
   );

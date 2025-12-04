@@ -51,4 +51,5 @@ I'm open to **internships**, **collaborations**, **freelance opportunities**, an
     "Portfolio",
   ],
   dateCreated: "2023-10-20", // YYYY-MM-DD
+  resume: "#", // Placeholder URL
 };
