@@ -39,6 +39,7 @@ export function TeckStack() {
                       width={32}
                       height={32}
                       unoptimized
+                      className={cn(tech.className)}
                     />
                   </a>
                 </TooltipTrigger>

@@ -176,6 +176,7 @@ export const TECH_STACK = [
         name: "Express",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
         url: "https://expressjs.com/",
+        className: "dark:invert",
     },
     {
         name: "Go",
@@ -208,6 +209,7 @@ export const TECH_STACK = [
         name: "Next.js",
         icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/nextdotjs.svg",
         url: "https://nextjs.org/",
+        className: "dark:invert",
     },
     {
         name: "Tailwind CSS",
@@ -247,6 +249,7 @@ export const TECH_STACK = [
         name: "LangChain",
         icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/langchain.svg",
         url: "https://www.langchain.com/",
+        className: "dark:invert",
     },
 
     // DevOps & Tools
@@ -259,6 +262,7 @@ export const TECH_STACK = [
         name: "GitHub",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
         url: "https://github.com/",
+        className: "dark:invert",
     },
     {
         name: "Docker",
@@ -274,6 +278,7 @@ export const TECH_STACK = [
         name: "Vercel",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
         url: "https://vercel.com/",
+        className: "dark:invert",
     },
     {
         name: "Firebase",
