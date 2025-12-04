@@ -87,21 +87,14 @@ export function ProjectItem({
                 </TooltipContent>
               </Tooltip>
 
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
-                    href={`/project/${project.id}`}
-                  >
-                    <ArrowRightIcon className="pointer-events-none size-4" />
-                    <span className="sr-only">View Project Details</span>
-                  </Link>
-                </TooltipTrigger>
-
-                <TooltipContent>
-                  <p>View Project Details</p>
-                </TooltipContent>
-              </Tooltip>
+              <Link
+                className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
+                href={`/project/${project.id}`}
+                title="View Project Details"
+              >
+                <ArrowRightIcon className="pointer-events-none size-4" />
+                <span className="sr-only">View Project Details</span>
+              </Link>
 
               <CollapsibleTrigger>
                 <div

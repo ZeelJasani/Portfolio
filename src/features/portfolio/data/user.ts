@@ -7,12 +7,15 @@ export const USER: User = {
   username: "ZeelXCode",
   gender: "male",
   pronouns: "he/him",
-  bio: "Creating with code. Small details matter.",
+  bio: "I build software that makes ideas work in the real world.",
   flipSentences: [
-    "Software Engineer",
-    "Open Source Contributor",
-    "Creating with code. Small details matter.",
+    "Software Developer",
+    "Backend Engineering",
+    "Mobile Apps",
+    "AI/ML Exploration",
+    "Building with intention"
   ],
+
   address: "India, Junagadh",
   phoneNumber: "+91 9316293722", // E.164 format
   email: "jasanizeel487@gmail.com", // plain text
@@ -38,6 +41,6 @@ I'm open to **internships**, **collaborations**, **freelance opportunities**, an
     "Software Developer",
     "Portfolio",
   ],
-  dateCreated: "2023-10-20", // YYYY-MM-DD
+  dateCreated: "2025-12-04", // YYYY-MM-DD
   resume: "#", // Placeholder URL
 };
