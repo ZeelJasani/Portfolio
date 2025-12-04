@@ -1,67 +1,54 @@
-# Zeel Jasani - Personal Portfolio
+# Zeel Jasani - Portfolio
 
-A modern, pixel-perfect developer portfolio built with Next.js 15, TypeScript, and Tailwind CSS.
+A modern, high-performance developer portfolio built to showcase projects, skills, and professional journey. Designed with a focus on aesthetics, responsiveness, and clean code.
 
-## 🚀 Tech Stack
+## ✨ Features
 
-- **Framework:** [Next.js 15](https://nextjs.org/) (App Router)
-- **Language:** [TypeScript](https://www.typescriptlang.org/)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components:** [Radix UI](https://www.radix-ui.com/) & [Shadcn UI](https://ui.shadcn.com/)
-- **Icons:** [Lucide React](https://lucide.dev/)
-- **Fonts:** [Geist Sans](https://vercel.com/font)
-- **Deployment:** [Vercel](https://vercel.com/)
+- **Modern UI/UX**: Clean, minimal design with smooth animations using Framer Motion.
+- **Responsive Layout**: Fully optimized for all devices, from mobile to desktop.
+- **Dark Mode**: Seamless theme switching support.
+- **Project Showcase**: Detailed project views with rich media support.
+- **Tech Stack**: Visual representation of technical skills.
 
-## 🛠️ Getting Started
+## 🛠️ Tech Stack
 
-1. **Clone the repository:**
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Library**: Shadcn/ui & Radix UI
+- **Animations**: Framer Motion (motion/react)
+- **Icons**: Lucide React
 
-    ```bash
-    git clone https://github.com/ZeelJasani/MyPortFolio.git
-    cd MyPortFolio
-    ```
+## 🚀 Getting Started
+
+1. **Clone the repo:**
+
+   ```bash
+   git clone https://github.com/ZeelJasani/Portfolio.git
+   cd Portfolio
+   ```
 
 2. **Install dependencies:**
 
-    ```bash
-    pnpm install
-    # or
-    npm install
-    # or
-    yarn install
-    ```
+   ```bash
+   pnpm install
+   ```
 
-3. **Run the development server:**
+3. **Run development server:**
 
-    ```bash
-    pnpm dev
-    ```
+   ```bash
+   pnpm dev
+   ```
 
-    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## 📦 Build & Deployment
+## 📦 Deployment
 
-To build the project for production:
+This project is optimized for Vercel.
 
-```bash
-pnpm build
-```
+## 📬 Connect
 
-The project is optimized for deployment on [Vercel](https://vercel.com/).
-
-1. Push your code to a GitHub repository.
-2. Import the project into Vercel.
-3. Vercel will automatically detect Next.js and configure the build settings.
-4. Add any necessary environment variables in the Vercel dashboard.
-
-## 📝 Features
-
-- **Responsive Design:** Fully responsive layout for all devices.
-- **Dark Mode:** Built-in dark mode support.
-- **Dynamic Projects:** Easily manage projects via data files.
-- **Tech Stack Showcase:** Visual representation of skills and technologies.
-- **SEO Optimized:** Meta tags and Open Graph support.
-
-## 📄 License
-
-This project is licensed under the MIT License.
+- [X (Twitter)](https://x.com/ZeelXCode)
+- [GitHub](https://github.com/ZeelJasani)
+- [LinkedIn](https://www.linkedin.com/in/zeel-jasani-808417365/)
+- [Instagram](https://www.instagram.com/___zeelll___/)
