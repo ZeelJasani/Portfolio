@@ -38,7 +38,7 @@ export const PROJECTS: Project[] = [
 - **Frontend:** Next.js 15 (App Router), TypeScript, Tailwind CSS, Radix UI, React Query.
 - **Backend:** Node.js, Next.js API Routes, Prisma, PostgreSQL.
 - **DevOps:** Vercel, GitHub Actions, Docker.`,
-    logo: "/images/projects/masterji.svg", // Placeholder logo path
+    logo: "/images/masterji.svg", // Placeholder logo path
   },
   {
     id: "3d-book",
@@ -66,6 +66,6 @@ export const PROJECTS: Project[] = [
 - **Core:** React, Three.js, React Three Fiber, @react-three/drei.
 - **Build:** Vite, Tailwind CSS.
 - **State:** Jotai.`,
-    logo: "/images/projects/3d-book.svg", // Placeholder logo path
+    logo: "/images/3d-book.svg", // Placeholder logo path
   },
 ];
