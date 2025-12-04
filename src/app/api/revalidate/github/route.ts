@@ -1,5 +1,5 @@
 import { revalidateTag } from 'next/cache';
-import { NextRequest, NextResponse } from 'next/server';
+import { type NextRequest, NextResponse } from 'next/server';
 
 // Secret token to protect the endpoint
 const REVALIDATE_SECRET = process.env.REVALIDATE_SECRET || 'your-secret-token-here';
@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
         }
 
         // Revalidate the github-contributions tag
-        revalidateTag('github-contributions');
+        revalidateTag('github-contributions', { expire: 0 });
 
         return NextResponse.json({
             revalidated: true,

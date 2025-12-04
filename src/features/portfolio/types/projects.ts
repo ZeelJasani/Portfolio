@@ -15,5 +15,4 @@ export type Project = {
   logo?: string;
   /** Whether the project card is expanded by default in the UI. */
   isExpanded?: boolean;
-
 };

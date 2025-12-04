@@ -1,11 +1,10 @@
 "use client";
 
-import { ArrowLeftIcon, CalendarIcon, ExternalLinkIcon, InfinityIcon, TagIcon } from "lucide-react";
+import { ArrowLeftIcon, ExternalLinkIcon, TagIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 import { Icons } from "@/components/icons";
-import { Markdown } from "@/components/markdown";
 import { Tag } from "@/components/ui/tag";
 import { UTM_PARAMS } from "@/config/site";
 import { addQueryParams } from "@/utils/url";
@@ -19,10 +18,6 @@ interface ProjectDetailProps {
 }
 
 export function ProjectDetail({ project, className }: ProjectDetailProps) {
-  const { start, end } = project.period;
-  const isOngoing = !end;
-  const isSinglePeriod = end === start;
-
   return (
     <div className={cn("space-y-6", className)}>
       {/* Back Navigation */}
@@ -57,25 +52,6 @@ export function ProjectDetail({ project, className }: ProjectDetailProps) {
 
           <div className="flex-1 space-y-2">
             <h1 className="text-3xl font-bold text-foreground">{project.title}</h1>
-            
-            {/* Period */}
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <CalendarIcon className="size-4" />
-              <span>{start}</span>
-              {!isSinglePeriod && (
-                <>
-                  <span className="font-mono">—</span>
-                  {isOngoing ? (
-                    <>
-                      <InfinityIcon className="size-4" />
-                      <span>Present</span>
-                    </>
-                  ) : (
-                    <span>{end}</span>
-                  )}
-                </>
-              )}
-            </div>
 
             {/* Project Link */}
             <div>
