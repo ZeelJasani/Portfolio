@@ -91,7 +91,7 @@ export function ProfileCover() {
       )}
     >
       <ParticleTextEffect
-        words={["ZEEL", "JASANI"]}
+        words={["ZEEL JASANI"]}
         className="absolute inset-0 w-full h-full flex items-center justify-center"
       />
     </motion.div>

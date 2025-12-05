@@ -42,8 +42,8 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "3d-book",
-    title: "3D Interactive Book",
-    tagline: "Interactive Web Experience",
+    title: "Zyora 3D Interactive Book",
+    tagline: "Interactive 3D Book Experience",
 
     link: "https://zyora-amber.vercel.app/",
     skills: [

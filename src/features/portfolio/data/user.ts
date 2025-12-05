@@ -42,5 +42,8 @@ I'm open to **internships**, **collaborations**, **freelance opportunities**, an
     "Portfolio",
   ],
   dateCreated: "2025-12-04", // YYYY-MM-DD
-  resume: "#", // Placeholder URL
+  resume: "https://drive.google.com/uc?export=download&id=1ygQvbC_JmKy9GpHvZGLTwLbCcnPo6nnb", // Google Drive direct download link
 };
+
+
+
