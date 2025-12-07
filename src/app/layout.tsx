@@ -121,6 +121,13 @@ export default function RootLayout({
             __html: JSON.stringify(getWebSiteJsonLd()).replace(/</g, "\\u003c"),
           }}
         />
+
+        {/* Umami Analytics */}
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="ffda4994-8365-4d82-aa3a-87db4423c65b"
+        />
       </head>
 
       <body suppressHydrationWarning>
