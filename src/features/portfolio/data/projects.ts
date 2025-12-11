@@ -3,8 +3,9 @@ import type { Project } from "../types/projects";
 // To add a new project:
 // 1. Add a new object to the PROJECTS array.
 // 2. Ensure it has a unique 'id'.
-// 3. Fill in the title, tagline, link, skills, description, and logo.
-// 4. Place the logo image in 'public/images/projects/' and reference it in the 'logo' field.
+// 3. Fill in the title, tagline, link, skills, description, logo, and image.
+// 4. Place the logo image in 'public/images/' and reference it in the 'logo' field.
+// 5. Place the project screenshot/image in 'public/images/' and reference it in the 'image' field.
 
 export const PROJECTS: Project[] = [
   {
@@ -14,31 +15,49 @@ export const PROJECTS: Project[] = [
 
     link: "https://mastrji.vercel.app/",
     skills: [
-      "Next.js 15",
-      "TypeScript",
-      "Tailwind CSS",
-      "Prisma",
-      "PostgreSQL",
-      "AWS S3",
-      "Docker",
-      "NextAuth.js",
-      "Stripe",
+      {
+        name: "Next.js 15",
+        icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/nextdotjs.svg",
+        className: "dark:invert",
+      },
+      {
+        name: "TypeScript",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+      },
+      {
+        name: "Prisma",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg",
+      },
+      {
+        name: "PostgreSQL",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+      },
+      {
+        name: "AWS S3",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+      },
+      {
+        name: "Docker",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+      },
+      {
+        name: "Better Auth",
+        // icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/better-auth.svg",
+        icon: "/icons/techstack/betterauth.png"
+      },
+      {
+        name: "Stripe",
+        icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/stripe.svg",
+      },
     ],
-    description: `A modern, full-stack Learning Management System (LMS) built with cutting-edge web technologies. It provides a comprehensive platform for creating, managing, and delivering online courses.
-
-**Key Features:**
-- **User Authentication:** Secure login with multiple providers (GitHub, email OTP) via Better Auth.
-- **Course Management:** Create and organize courses with chapters and lessons.
-- **Rich Content Editor:** Advanced text editing with TipTap integration.
-- **File Management:** Secure file uploads with S3-compatible storage.
-- **Admin Dashboard:** Comprehensive course administration tools.
-- **Payment Processing:** Integrated Stripe payment system.
-
-**Tech Stack:**
-- **Frontend:** Next.js 15 (App Router), TypeScript, Tailwind CSS, Radix UI, React Query.
-- **Backend:** Node.js, Next.js API Routes, Prisma, PostgreSQL.
-- **DevOps:** Vercel, GitHub Actions, Docker.`,
-    logo: "/images/masterji.svg", // Placeholder logo path
+    description: `A modern, full-stack Learning Management System (LMS) built with cutting-edge web technologies. Features secure authentication, course management, rich content editing, file uploads with S3, admin dashboard, and integrated Stripe payments. Built with Next.js 15, TypeScript, Prisma, and PostgreSQL.`,
+    logo: "/images/masterji.svg",
+    image: "/images/masterji-preview.png",
+    isLive: true,
   },
   {
     id: "3d-book",
@@ -47,25 +66,35 @@ export const PROJECTS: Project[] = [
 
     link: "https://zyora-amber.vercel.app/",
     skills: [
-      "React",
-      "Three.js",
-      "React Three Fiber",
-      "Vite",
-      "Tailwind CSS",
-      "Jotai",
+      {
+        name: "React",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      },
+      {
+        name: "Three.js",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg",
+        className: "dark:invert",
+      },
+      {
+        name: "React Three Fiber",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      },
+      {
+        name: "Vite",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+      },
+      {
+        name: "Jotai",
+        icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/jotai.svg",
+      },
     ],
-    description: `A high-performance 3D book implementation built with React Three Fiber and Three.js, featuring realistic page turning animations and interactive controls.
-
-**Features:**
-- **Realistic 3D Book:** Dynamic lighting, shadows, and realistic paper texture mapping.
-- **Smooth Page Turning:** Physics-based animations with customizable curve strength.
-- **Interactive Controls:** Orbit controls for 360° viewing and hover effects.
-- **Customizable Content:** Easy page content management and support for custom textures.
-
-**Tech Stack:**
-- **Core:** React, Three.js, React Three Fiber, @react-three/drei.
-- **Build:** Vite, Tailwind CSS.
-- **State:** Jotai.`,
-    logo: "/images/3d-book.svg", // Placeholder logo path
+    description: `A high-performance 3D book implementation featuring realistic page turning animations and interactive controls. Built with React Three Fiber and Three.js, it offers dynamic lighting, shadows, realistic paper textures, smooth physics-based animations, and 360° viewing with orbit controls.`,
+    logo: "/images/3d-book.svg",
+    image: "/images/3d-book-preview.png",
+    isLive: true,
   },
 ];

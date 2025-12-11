@@ -69,6 +69,20 @@ export function ProjectDetail({ project, className }: ProjectDetailProps) {
         </div>
       </div>
 
+      {/* Project Image */}
+      {project.image && (
+        <div className="relative w-full overflow-hidden rounded-xl border border-border bg-muted">
+          <Image
+            src={project.image}
+            alt={`${project.title} preview`}
+            width={1200}
+            height={675}
+            className="w-full h-auto object-cover"
+            unoptimized
+          />
+        </div>
+      )}
+
       {/* Skills */}
       {project.skills.length > 0 && (
         <div className="space-y-3">

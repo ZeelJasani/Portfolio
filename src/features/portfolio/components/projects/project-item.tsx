@@ -1,145 +1,136 @@
+"use client";
+
 import { ArrowRightIcon, LinkIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Icons } from "@/components/icons";
-import { Markdown } from "@/components/markdown";
 import {
-  CollapsibleChevronsIcon,
-  CollapsibleContent,
-  CollapsibleTrigger,
-  CollapsibleWithContext,
-} from "@/components/ui/collapsible";
-import { Tag } from "@/components/ui/tag";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
+    Tooltip,
+    TooltipContent,
+    TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { ProseMono } from "@/components/ui/typography";
 
 import type { Project } from "../../types/projects";
 
 export function ProjectItem({
-  className,
-  project,
+    className,
+    project,
 }: {
-  className?: string;
-  project: Project;
+    className?: string;
+    project: Project;
 }) {
+    return (
+        <div className={className}>
+            <div className="hover:bg-accent2">
+                <div>
+                    <div className="flex w-full items-center gap-4 p-4 pr-2">
+                        <div className="flex-1">
+                            <h3 className="mb-1 leading-snug font-medium text-balance">
+                                {project.title}
+                            </h3>
 
+                            {project.tagline && (
+                                <p className="text-sm text-muted-foreground">
+                                    {project.tagline}
+                                </p>
+                            )}
+                        </div>
 
-  return (
-    <CollapsibleWithContext defaultOpen={project.isExpanded} asChild>
-      <div className={className}>
-        <div className="flex items-center hover:bg-accent2">
-          {project.logo ? (
-            <Image
-              src={project.logo}
-              alt={project.title}
-              width={32}
-              height={32}
-              quality={100}
-              className="mx-4 flex size-6 shrink-0 select-none dark:invert"
-              unoptimized
-              aria-hidden="true"
-            />
-          ) : (
-            <div
-              className="mx-4 flex size-6 shrink-0 items-center justify-center rounded-lg border border-muted-foreground/15 bg-muted text-muted-foreground ring-1 ring-edge ring-offset-1 ring-offset-background select-none"
-              aria-hidden="true"
-            >
-              <Icons.project className="size-4" />
-            </div>
-          )}
+                        <Tooltip>
+                            <TooltipTrigger asChild>
+                                <a
+                                    className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noopener"
+                                >
+                                    <LinkIcon className="pointer-events-none size-4" />
+                                    <span className="sr-only">Open Project Link</span>
+                                </a>
+                            </TooltipTrigger>
 
-          <div className="flex-1 border-l border-dashed border-edge">
-            <div className="flex w-full items-center gap-4 p-4 pr-2 text-left">
-              <CollapsibleTrigger className="flex-1 text-left">
-                <div className="flex-1">
-                  <h3 className="mb-1 leading-snug font-medium text-balance">
-                    {project.title}
-                  </h3>
+                            <TooltipContent>
+                                <p>Open Project Link</p>
+                            </TooltipContent>
+                        </Tooltip>
 
-                  {project.tagline && (
-                    <p className="text-sm text-muted-foreground">
-                      {project.tagline}
-                    </p>
-                  )}
+                        <Link
+                            className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
+                            href={`/project/${project.id}`}
+                            title="View Project Details"
+                        >
+                            <ArrowRightIcon className="pointer-events-none size-4" />
+                            <span className="sr-only">View Project Details</span>
+                        </Link>
+                    </div>
+
+                    {/* Project Image - Always Visible */}
+                    {project.image && (
+                        <div className="border-t border-edge">
+                            <div className="p-4">
+                                <div className="relative w-full overflow-hidden rounded-lg border border-edge bg-muted">
+                                    <Image
+                                        src={project.image}
+                                        alt={`${project.title} preview`}
+                                        width={800}
+                                        height={450}
+                                        className="w-full h-auto object-cover"
+                                        unoptimized
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Description - Enhanced Readability */}
+                    {project.description && (
+                        <div className="border-t border-edge">
+                            <div className="p-4 space-y-3">
+                                {/* Project Name with Status Indicator */}
+                                <div className="flex items-center gap-2">
+                                    <h4 className="text-base font-semibold underline decoration-2 underline-offset-4">
+                                        {project.title}
+                                    </h4>
+                                    {project.isLive !== undefined && (
+                                        <div
+                                            className={`size-2 rounded-full ${project.isLive ? "bg-green-500" : "bg-red-500"
+                                                }`}
+                                            title={project.isLive ? "Live" : "Offline"}
+                                        />
+                                    )}
+                                </div>
+
+                                {/* Description Text */}
+                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                    {project.description}
+                                </p>
+
+                                {/* Tech Stack Icons */}
+                                {project.skills && project.skills.length > 0 && (
+                                    <div className="flex flex-wrap gap-2 pt-2">
+                                        {project.skills.map((tech, index) => (
+                                            <span
+                                                key={index}
+                                                className="inline-flex items-center gap-1.5 px-2 py-1 rounded-md bg-secondary/50 text-foreground text-xs font-medium border border-border hover:bg-secondary/70 transition-colors whitespace-nowrap"
+                                            >
+                                                <Image
+                                                    src={tech.icon}
+                                                    alt={tech.name}
+                                                    width={14}
+                                                    height={14}
+                                                    className={tech.className || ''}
+                                                    unoptimized
+                                                />
+                                                {tech.name}
+                                            </span>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    )}
                 </div>
-              </CollapsibleTrigger>
-
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <a
-                    className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    <LinkIcon className="pointer-events-none size-4" />
-                    <span className="sr-only">Open Project Link</span>
-                  </a>
-                </TooltipTrigger>
-
-                <TooltipContent>
-                  <p>Open Project Link</p>
-                </TooltipContent>
-              </Tooltip>
-
-              <Link
-                className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
-                href={`/project/${project.id}`}
-                title="View Project Details"
-              >
-                <ArrowRightIcon className="pointer-events-none size-4" />
-                <span className="sr-only">View Project Details</span>
-              </Link>
-
-              <CollapsibleTrigger>
-                <div
-                  className="shrink-0 text-muted-foreground [&_svg]:size-4"
-                  aria-hidden
-                >
-                  <CollapsibleChevronsIcon />
-                </div>
-              </CollapsibleTrigger>
             </div>
-          </div>
         </div>
-
-        <CollapsibleContent className="group overflow-hidden duration-300 data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
-          <div className="border-t border-edge shadow-inner">
-            <div className="space-y-4 p-4 duration-300 group-data-[state=closed]:animate-fade-out group-data-[state=open]:animate-fade-in">
-              {project.description && (
-                <ProseMono>
-                  <Markdown>{project.description}</Markdown>
-                </ProseMono>
-              )}
-
-              {project.skills.length > 0 && (
-                <ul className="flex flex-wrap gap-1.5">
-                  {project.skills.map((skill, index) => (
-                    <li key={index} className="flex">
-                      <Tag>{skill}</Tag>
-                    </li>
-                  ))}
-                </ul>
-              )}
-
-              <div className="pt-2">
-                <Link
-                  href={`/project/${project.id}`}
-                  className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
-                >
-                  View more details
-                  <ArrowRightIcon className="size-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </CollapsibleContent>
-      </div>
-    </CollapsibleWithContext>
-  );
+    );
 }
