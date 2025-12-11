@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Icons } from "@/components/icons";
-import { Tag } from "@/components/ui/tag";
 import { UTM_PARAMS } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { addQueryParams } from "@/utils/url";
@@ -92,9 +91,20 @@ export function ProjectDetail({ project, className }: ProjectDetailProps) {
           </h2>
           <div className="flex flex-wrap gap-2">
             {project.skills.map((skill, index) => (
-              <Tag key={index} className="bg-accent text-accent-foreground">
-                {skill}
-              </Tag>
+              <span
+                key={index}
+                className="inline-flex items-center gap-1.5 px-2 py-1 rounded-md bg-accent text-accent-foreground text-xs font-medium"
+              >
+                <Image
+                  src={skill.icon}
+                  alt={skill.name}
+                  width={14}
+                  height={14}
+                  className={skill.className || ''}
+                  unoptimized
+                />
+                {skill.name}
+              </span>
             ))}
           </div>
         </div>
