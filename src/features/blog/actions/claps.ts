@@ -12,7 +12,6 @@ function createAdminClient() {
     )
 }
 
-// Get or create user in database by Clerk ID
 async function getOrCreateDbUser() {
     const { userId } = await auth()
     if (!userId) return null
