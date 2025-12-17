@@ -9,9 +9,71 @@ const nextConfig: NextConfig = {
     root: path.join(__dirname, "."),
   },
   devIndicators: false,
+
+  // Image optimization
   images: {
-    qualities: [75, 100],
+    qualities: [75, 90],
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
   },
+
+  // Compression
+  compress: true,
+
+  // Performance optimizations
+  experimental: {
+    optimizeCss: true,
+  },
+
+  // Headers for caching
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "X-Content-Type-Options",
+            value: "nosniff",
+          },
+          {
+            key: "X-Frame-Options",
+            value: "DENY",
+          },
+          {
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin",
+          },
+        ],
+      },
+      {
+        // Cache static assets for 1 year
+        source: "/:all*(svg|jpg|jpeg|png|gif|ico|webp|avif|woff|woff2)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        // Cache CSS and JS for 1 year
+        source: "/_next/static/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+    ];
+  },
+
   async rewrites() {
     return [
       {
@@ -32,30 +94,6 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  // async headers() {
-  //   return [
-  //     {
-  //       source: "/(.*)",
-  //       headers: [
-  //         {
-  //           // Prevents MIME type sniffing, reducing the risk of malicious file uploads
-  //           key: "X-Content-Type-Options",
-  //           value: "nosniff",
-  //         },
-  //         {
-  //           // Protects against clickjacking attacks by preventing your site from being embedded in iframes.
-  //           key: "X-Frame-Options",
-  //           value: "DENY",
-  //         },
-  //         {
-  //           // Controls how much referrer information is included with requests, balancing security and functionality.
-  //           key: "Referrer-Policy",
-  //           value: "strict-origin-when-cross-origin",
-  //         },
-  //       ],
-  //     },
-  //   ];
-  // },
 };
 
 const withMDX = createMDX({

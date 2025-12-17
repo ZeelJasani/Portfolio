@@ -41,12 +41,15 @@
   "dependencies": {
     "@bprogress/next": "^3.2.12",
     "@c15t/nextjs": "^1.8.1",
+    "@clerk/nextjs": "^6.36.2",
     "@date-fns/tz": "^1.4.1",
     "@hookform/resolvers": "^4.1.0",
     "@mdx-js/loader": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
     "@ncdai/react-wheel-picker": "^1.0.18",
     "@next/mdx": "^16.0.7",
+    "@supabase/ssr": "^0.8.0",
+    "@supabase/supabase-js": "^2.87.1",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "class-variance-authority": "^0.7.1",
@@ -76,6 +79,7 @@
     "schema-dts": "^1.1.5",
     "sharp": "^0.34.3",
     "sonner": "^2.0.5",
+    "svix": "^1.82.0",
     "tailwind-merge": "^3.3.1",
     "vcard-creator": "^0.7.2",
     "zod": "^3.25.0"

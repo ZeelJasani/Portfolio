@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import type { WebSite, WithContext } from "schema-dts";
 
@@ -122,12 +123,6 @@ export default function RootLayout({
           }}
         />
 
-        {/* Umami Analytics */}
-        <script
-          defer
-          src="https://cloud.umami.is/script.js"
-          data-website-id="ffda4994-8365-4d82-aa3a-87db4423c65b"
-        />
       </head>
 
       <body suppressHydrationWarning>
@@ -136,6 +131,14 @@ export default function RootLayout({
             {children}
           </NuqsAdapter>
         </Providers>
+
+        {/* Umami Analytics */}
+        <Script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="ffda4994-8365-4d82-aa3a-87db4423c65b"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
