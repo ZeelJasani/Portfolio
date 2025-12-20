@@ -9,11 +9,11 @@ import type { Project } from "../types/projects";
 
 export const PROJECTS: Project[] = [
   {
-    id: "masterji",
-    title: "Masterji",
-    tagline: "LMS Platform",
+    id: "Learnix",
+    title: "Learnix",
+    tagline: "Modern LMS Platform",
 
-    link: "https://mastrji.vercel.app/",
+    link: "https://learnix-sepia.vercel.app/",
     skills: [
       {
         name: "Next.js 15",
@@ -56,7 +56,7 @@ export const PROJECTS: Project[] = [
     ],
     description: `A modern, full-stack Learning Management System (LMS) built with cutting-edge web technologies. Features secure authentication, course management, rich content editing, file uploads with S3, admin dashboard, and integrated Stripe payments. Built with Next.js 15, TypeScript, Prisma, and PostgreSQL.`,
     logo: "/images/masterji.svg",
-    image: "/images/masterji-preview.png",
+    image: "/images/Learnix.png",
     isLive: true,
   },
   {
