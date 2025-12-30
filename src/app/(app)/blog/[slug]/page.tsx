@@ -61,9 +61,9 @@ export default async function BlogPostPage({ params }: Props) {
         .slice(0, 3)
 
     return (
-        <div className="min-h-screen">
+        <div className="mx-auto border-x border-edge md:max-w-3xl min-h-svh">
             {/* Back Button */}
-            <div className="w-full max-w-3xl mx-auto px-4 pt-8">
+            <div className="w-full mx-auto px-4 pt-8">
                 <Link
                     href="/blog"
                     className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
@@ -75,8 +75,8 @@ export default async function BlogPostPage({ params }: Props) {
 
             {/* Cover Image - Smaller */}
             {post.cover_image && (
-                <div className="w-full max-w-3xl mx-auto px-4 pt-6">
-                    <div className="relative aspect-21/9 overflow-hidden rounded-xl">
+                <div className="w-full mx-auto px-4 pt-6">
+                    <div className="relative aspect-21/9 overflow-hidden rounded-xl border border-edge">
                         <img
                             src={post.cover_image}
                             alt={post.title}
@@ -87,9 +87,9 @@ export default async function BlogPostPage({ params }: Props) {
             )}
 
             {/* Content Container */}
-            <article className="mx-auto max-w-3xl px-4 py-8">
+            <article className="mx-auto px-4 py-8">
                 {/* Header */}
-                <header className="mb-6">
+                <header className="mb-6 screen-line-after pb-6">
                     {/* Title */}
                     <h1 className="text-2xl md:text-3xl font-bold text-foreground leading-tight mb-3">
                         {post.title}
@@ -128,7 +128,7 @@ export default async function BlogPostPage({ params }: Props) {
 
                 {/* Tags */}
                 {post.tags && post.tags.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mb-6 pb-6 border-b border-border">
+                    <div className="flex flex-wrap gap-2 mb-6 pb-6 screen-line-after">
                         {post.tags.map((tag) => (
                             <Link
                                 key={tag}
@@ -154,11 +154,11 @@ export default async function BlogPostPage({ params }: Props) {
 
             {/* Related Posts */}
             {relatedPosts.length > 0 && (
-                <section className="mx-auto max-w-5xl px-4 py-12">
+                <section className="mx-auto px-4 py-12 screen-line-before">
                     <h2 className="text-xl font-semibold text-foreground mb-6">
                         You may also like
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                         {relatedPosts.map((relatedPost) => (
                             <BlogCard key={relatedPost.id} post={relatedPost} />
                         ))}

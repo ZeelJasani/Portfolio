@@ -28,15 +28,14 @@ export default async function BlogPage({ searchParams }: Props) {
     ).slice(0, 10)
 
     return (
-        <div className="min-h-screen py-12">
-            <div className="mx-auto max-w-4xl px-4">
+        <div className="mx-auto border-x border-edge md:max-w-3xl min-h-svh">
+            <div className="py-12 px-4">
                 {/* Header */}
-                <header className="text-center mb-8">
+                <header className="text-center mb-8 screen-line-after pb-8">
                     <h1 className="text-3xl font-bold text-foreground mb-3">Blogs</h1>
-                    <p className="text-muted-foreground mb-4">
+                    <p className="text-muted-foreground">
                         Thoughts, tutorials, and insights on engineering and programming.
                     </p>
-                    <div className="w-40 h-px bg-border mx-auto" />
                 </header>
 
                 {/* Popular Tags */}
@@ -80,15 +79,15 @@ export default async function BlogPage({ searchParams }: Props) {
                     </h2>
                 </div>
 
-                {/* Posts Grid - 2x2 centered */}
+                {/* Posts Grid - centered */}
                 {posts.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         {posts.map((post) => (
                             <BlogCard key={post.id} post={post} />
                         ))}
                     </div>
                 ) : (
-                    <div className="text-center py-16 border border-border rounded-xl bg-card max-w-3xl mx-auto">
+                    <div className="text-center py-16 border border-border rounded-xl bg-card">
                         <h3 className="text-lg font-semibold text-foreground mb-2">
                             No posts found
                         </h3>

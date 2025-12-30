@@ -38,29 +38,31 @@ export default async function ProjectPage({ params }: Props) {
   }
 
   return (
-    <div className="mx-auto max-w-3xl py-12 px-4">
-      <Link
-        href="/project"
-        className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
-      >
-        <ArrowLeftIcon className="size-4" />
-        Back to Projects
-      </Link>
+    <div className="mx-auto border-x border-edge md:max-w-3xl min-h-svh">
+      <div className="py-12 px-4">
+        <Link
+          href="/project"
+          className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+        >
+          <ArrowLeftIcon className="size-4" />
+          Back to Projects
+        </Link>
 
-      <header className="mb-10 border-b border-edge pb-10">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          {project.frontmatter.title}
-        </h1>
-        {project.frontmatter.description && (
-          <p className="mt-4 text-xl text-muted-foreground">
-            {project.frontmatter.description}
-          </p>
-        )}
-      </header>
+        <header className="mb-10 screen-line-after pb-10">
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            {project.frontmatter.title}
+          </h1>
+          {project.frontmatter.description && (
+            <p className="mt-4 text-xl text-muted-foreground">
+              {project.frontmatter.description}
+            </p>
+          )}
+        </header>
 
-      <Prose>
-        <MDXRemote source={project.content} />
-      </Prose>
+        <Prose>
+          <MDXRemote source={project.content} />
+        </Prose>
+      </div>
     </div>
   );
 }
