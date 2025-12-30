@@ -3,6 +3,8 @@
 import { ArrowRightIcon, LinkIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 import {
     Tooltip,
@@ -10,7 +12,7 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-import type { Project } from "../../types/projects";
+import type { Project, TechStack } from "../../types/projects";
 
 export function ProjectItem({
     className,
@@ -19,6 +21,21 @@ export function ProjectItem({
     className?: string;
     project: Project;
 }) {
+    const { resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    // Determine which image to show based on theme and hydration state
+    // Default to darkImage on server to match defaultTheme="dark"
+    const displayImage = !mounted
+        ? (project.darkImage || project.image)
+        : (resolvedTheme === "dark"
+            ? (project.darkImage || project.image)
+            : (project.lightImage || project.image));
+
     return (
         <div className={className}>
             <div className="hover:bg-accent2">
@@ -64,13 +81,14 @@ export function ProjectItem({
                         </Link>
                     </div>
 
-                    {/* Project Image - Always Visible */}
-                    {project.image && (
+                    {/* Project Image - Always Visible if displayImage exists */}
+                    {displayImage && (
                         <div className="border-t border-edge">
                             <div className="p-4">
                                 <div className="relative w-full overflow-hidden rounded-lg border border-edge bg-muted">
                                     <Image
-                                        src={project.image}
+                                        key={displayImage}
+                                        src={displayImage}
                                         alt={`${project.title} preview`}
                                         width={800}
                                         height={450}
@@ -86,19 +104,18 @@ export function ProjectItem({
                     {project.description && (
                         <div className="border-t border-edge">
                             <div className="p-4 space-y-3">
-                                {/* Project Name with Status Indicator */}
-                                <div className="flex items-center gap-2">
-                                    <h4 className="text-base font-semibold underline decoration-2 underline-offset-4">
-                                        {project.title}
-                                    </h4>
-                                    {project.isLive !== undefined && (
+                                {/* Status Indicator */}
+                                {project.isLive !== undefined && (
+                                    <div className="flex items-center gap-2">
                                         <div
                                             className={`size-2 rounded-full ${project.isLive ? "bg-green-500" : "bg-red-500"
                                                 }`}
-                                            title={project.isLive ? "Live" : "Offline"}
                                         />
-                                    )}
-                                </div>
+                                        <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                                            {project.isLive ? "Live" : "Offline"}
+                                        </span>
+                                    </div>
+                                )}
 
                                 {/* Description Text */}
                                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -108,7 +125,7 @@ export function ProjectItem({
                                 {/* Tech Stack Icons */}
                                 {project.skills && project.skills.length > 0 && (
                                     <div className="flex flex-wrap gap-2 pt-2">
-                                        {project.skills.map((tech, index) => (
+                                        {project.skills.map((tech: TechStack, index: number) => (
                                             <span
                                                 key={index}
                                                 className="inline-flex items-center gap-1.5 px-2 py-1 rounded-md bg-secondary/50 text-foreground text-xs font-medium border border-border hover:bg-secondary/70 transition-colors whitespace-nowrap"

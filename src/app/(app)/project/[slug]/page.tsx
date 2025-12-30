@@ -38,9 +38,9 @@ export default async function ProjectPage({ params }: Props) {
   }
 
   return (
-    <div className="mx-auto max-w-3xl py-10">
+    <div className="mx-auto max-w-3xl py-12 px-4">
       <Link
-        href="/#projects"
+        href="/project"
         className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
       >
         <ArrowLeftIcon className="size-4" />

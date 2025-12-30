@@ -22,6 +22,10 @@ export type Project = {
   logo?: string;
   /** Project preview image URL (absolute or path under /public). */
   image?: string;
+  /** Light mode project preview image URL. */
+  lightImage?: string;
+  /** Dark mode project preview image URL. */
+  darkImage?: string;
   /** Whether the project is currently live/active. */
   isLive?: boolean;
   /** Whether the project card is expanded by default in the UI. */

@@ -4,6 +4,8 @@ import { createClient } from '@/lib/supabase/server'
 import { revalidatePath } from 'next/cache'
 import type { BlogPost } from '@/types/blog'
 
+export const dynamic = 'force-dynamic'
+
 export const metadata = {
     title: 'Manage Blog Posts | Admin',
 }
@@ -118,8 +120,8 @@ export default async function AdminBlogPage() {
                                     <td className="px-4 py-4">
                                         <span
                                             className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium ${post.published
-                                                    ? 'bg-green-500/10 text-green-500'
-                                                    : 'bg-yellow-500/10 text-yellow-500'
+                                                ? 'bg-green-500/10 text-green-500'
+                                                : 'bg-yellow-500/10 text-yellow-500'
                                                 }`}
                                         >
                                             {post.published ? (

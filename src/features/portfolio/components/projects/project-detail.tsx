@@ -3,13 +3,15 @@
 import { ArrowLeftIcon, ExternalLinkIcon, TagIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 import { Icons } from "@/components/icons";
 import { UTM_PARAMS } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { addQueryParams } from "@/utils/url";
 
-import type { Project } from "../../types/projects";
+import type { Project, TechStack } from "../../types/projects";
 
 interface ProjectDetailProps {
   project: Project;
@@ -17,6 +19,20 @@ interface ProjectDetailProps {
 }
 
 export function ProjectDetail({ project, className }: ProjectDetailProps) {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Determine which image to show based on theme and hydration state
+  const displayImage = !mounted
+    ? (project.darkImage || project.image)
+    : (resolvedTheme === "dark"
+      ? (project.darkImage || project.image)
+      : (project.lightImage || project.image));
+
   return (
     <div className={cn("space-y-6", className)}>
       {/* Back Navigation */}
@@ -69,10 +85,11 @@ export function ProjectDetail({ project, className }: ProjectDetailProps) {
       </div>
 
       {/* Project Image */}
-      {project.image && (
+      {displayImage && (
         <div className="relative w-full overflow-hidden rounded-xl border border-border bg-muted">
           <Image
-            src={project.image}
+            key={displayImage}
+            src={displayImage}
             alt={`${project.title} preview`}
             width={1200}
             height={675}
@@ -90,7 +107,7 @@ export function ProjectDetail({ project, className }: ProjectDetailProps) {
             Technologies & Skills
           </h2>
           <div className="flex flex-wrap gap-2">
-            {project.skills.map((skill, index) => (
+            {project.skills.map((skill: TechStack, index: number) => (
               <span
                 key={index}
                 className="inline-flex items-center gap-1.5 px-2 py-1 rounded-md bg-accent text-accent-foreground text-xs font-medium"

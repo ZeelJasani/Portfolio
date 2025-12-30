@@ -3,6 +3,8 @@ import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { FileText, Users, MessageSquare, ArrowLeft } from 'lucide-react'
 
+export const dynamic = 'force-dynamic'
+
 export default async function AdminLayout({
     children,
 }: {

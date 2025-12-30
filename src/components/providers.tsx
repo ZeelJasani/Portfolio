@@ -18,7 +18,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
           disableTransitionOnChange
           enableColorScheme
           storageKey="theme"
-          defaultTheme="system"
+          defaultTheme="dark"
           attribute="class"
         >
           <AppProgressProvider

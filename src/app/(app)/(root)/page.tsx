@@ -41,7 +41,7 @@ export default function Page() {
         <TeckStack />
         <Separator />
 
-        <Projects />
+        <Projects limit={2} />
 
       </div>
     </>

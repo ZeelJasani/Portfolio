@@ -46,8 +46,10 @@ export const PROJECTS: Project[] = [
       },
       {
         name: "Better Auth",
-        // icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/better-auth.svg",
-        icon: "/icons/techstack/betterauth.png"
+        // icon: "https://raw.githubusercontent.com/better-auth/better-auth/main/docs/public/better-auth.svg",
+        // icon: "icons/LogoDark.webp ? /icons/LogoLight.webp",
+        icon: "/icons/LogoDark.webp"
+        // className: "dark:invert",
       },
       {
         name: "Stripe",
@@ -56,7 +58,62 @@ export const PROJECTS: Project[] = [
     ],
     description: `A modern, full-stack Learning Management System (LMS) built with cutting-edge web technologies. Features secure authentication, course management, rich content editing, file uploads with S3, admin dashboard, and integrated Stripe payments. Built with Next.js 15, TypeScript, Prisma, and PostgreSQL.`,
     logo: "/images/masterji.svg",
-    image: "/images/Learnix.png",
+    // image: "/images/Learnix.png",
+    lightImage: "/images/learnix-light.png",
+    darkImage: "/images/learnix-dark.png",
+    isLive: true,
+  },
+  {
+    id: "notiva",
+    title: "Notiva",
+    tagline: "The note-taking app that thinks like you code",
+    link: "https://github.com/ZeelJasani/Notiva",
+    skills: [
+      {
+        name: "Next.js 15",
+        icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/nextdotjs.svg",
+        className: "dark:invert",
+      },
+      {
+        name: "Tiptap",
+        // icon: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/tiptap.svg",
+        // className: "dark:invert",
+        icon: "/icons/tiptap.webp"
+      },
+      {
+        name: "Tailwind CSS 4",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+      },
+      {
+        name: "Drizzle ORM",
+        icon: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/drizzle.svg",
+        className: "dark:invert",
+      },
+      {
+        name: "Better Auth",
+        // icon: "https://raw.githubusercontent.com/better-auth/better-auth/main/docs/public/better-auth.svg",
+        icon: "/icons/LogoDark.webp"
+      },
+      {
+        name: "Neon",
+        // icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/neon.svg",
+        icon: "/icons/neon.webp"
+      },
+      {
+        name: "Framer Motion",
+        icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/framer.svg",
+      },
+      {
+        name: "Lucide React",
+        icon: "https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/lucide.svg",
+        className: "dark:invert",
+      },
+    ],
+    description: `Notiva is a minimal, high-performance note-taking platform designed specifically for developers. It bridges the gap between traditional text editors and powerful IDEs, offering a block-based workflow that mirrors how programmers structure their thoughts. Features keyboard-first navigation, slash commands, advanced code blocks, and infinite nested hierarchy.`,
+    logo: "/images/notiva.png",
+    // image: "/images/notiva.png",
+    lightImage: "/images/notiva-light.png",
+    darkImage: "/images/notiva-dark.png",
     isLive: true,
   },
   {
