@@ -1,0 +1,66 @@
+---
+title: Notiva - The Cognitive Code Taking Environment
+description: A high-performance, block-based note-taking platform architected for the modern developer.
+---
+
+Notiva isn't just a note-taking app; it's a cognitive workspace designed to mirror the way developers think. Built with the latest Next.js 15 App Router and a custom Tiptap-based block editor, it offers a seamless blend of structured organization and free-form creativity.
+
+### Why Notiva?
+
+As developers, our thoughts are often hierarchical and syntactically rich. Notiva bridges the gap between the rigid structure of a file system and the flexibility of a blank page, providing a keyboard-first experience that never breaks your flow.
+
+## Premium Features
+
+### Keyboard-Centric Block Editor
+
+Built on top of **Tiptap**, the editor is the heart of Notiva. It's not just text; it's a collection of interactive blocks.
+
+* **Slash Commands (`/`)**: Instantly trigger formatting, media embeds, or custom components without lifting your hands from the keyboard.
+* **Intelligent Code Blocks**: Native syntax highlighting for 50+ languages using `lowlight` and `highlight.js`, with automatic language detection.
+* **Markdown Support**: True markdown-friendly input patterns (e.g., `#` for headings, `*` for lists).
+
+### Nested Data Architecture
+
+Organize your knowledge with an infinite hierarchy of notebooks and notes.
+
+* **Recursive Sidebar**: A custom-built, server-side rendered sidebar that handles deep nesting with ease and high performance.
+* **Real-time Persistence**: Leverages **Drizzle ORM** and **Neon** for optimistic updates and ultra-low latency data synchronization.
+
+### Secure & Scalable Authentication
+
+Integrated with **Better Auth** to provide enterprise-grade security:
+
+* Social Logins (Google, GitHub).
+* Secure Session Management.
+* Fine-grained Authorization.
+
+### Adaptive & Premium UI
+
+A design language that feels alive.
+
+* **Glassmorphism Effects**: Subtle blurs and gradients powered by Tailwind CSS 4.
+* **Micro-interactions**: Smooth transitions and animations using **Framer Motion**.
+* **Dynamic Theme Engine**: Perfect harmony between Dark and Light modes.
+
+## Technical Showcase
+
+### The Stack
+
+| Layer | Technology |
+| :--- | :--- |
+| **Framework** | [Next.js 15 (App Router)](https://nextjs.org/) |
+| **Language** | [TypeScript](https://www.typescriptlang.org/) |
+| **Database** | [Neon (Serverless Postgres)](https://neon.tech/) |
+| **ORM** | [Drizzle ORM](https://orm.drizzle.team/) |
+| **Auth** | [Better Auth](https://better-auth.com/) |
+| **Styling** | [Tailwind CSS 4](https://tailwindcss.com/) |
+| **Animations** | [Framer Motion](https://www.framer.com/motion/) |
+| **Editor** | [Tiptap (Headless)](https://tiptap.dev/) |
+
+### Project Architecture
+
+Notiva follows a modular architecture focused on Type Safety and Performance:
+
+* **Server Actions**: Unified data mutations with full end-to-end type safety.
+* **Component Architecture**: Atomic design principles using `shadcn/ui` as a foundation.
+* **Optimistic UI**: Using React's `useTransition` and `useOptimistic` for instant feedback.

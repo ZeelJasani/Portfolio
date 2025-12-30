@@ -66,8 +66,8 @@ export const PROJECTS: Project[] = [
   {
     id: "notiva",
     title: "Notiva",
-    tagline: "The note-taking app that thinks like you code",
-    link: "https://github.com/ZeelJasani/Notiva",
+    tagline: "The note taking app that thinks like you code",
+    link: "https://notiva-olive.vercel.app/",
     skills: [
       {
         name: "Next.js 15",

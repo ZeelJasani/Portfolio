@@ -12,7 +12,7 @@ export function NotFound({ className }: { className?: string }) {
         className
       )}
     >
-      <svg
+      {/* <svg
         className="h-28 w-full text-border"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 514 258"
@@ -24,7 +24,7 @@ export function NotFound({ className }: { className?: string }) {
           strokeWidth="1"
           vectorEffect="non-scaling-stroke"
         />
-      </svg>
+      </svg> */}
 
       <h1 className="mt-8 mb-6 font-mono text-8xl font-medium">404</h1>
 

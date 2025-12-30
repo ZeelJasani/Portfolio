@@ -1,16 +1,12 @@
 "use client";
 
-import { ArrowRightIcon, LinkIcon } from "lucide-react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
+import { ArrowRightIcon, LinkIcon } from "lucide-react";
 
-import {
-    Tooltip,
-    TooltipContent,
-    TooltipTrigger,
-} from "@/components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 import type { Project, TechStack } from "../../types/projects";
 
@@ -28,8 +24,7 @@ export function ProjectItem({
         setMounted(true);
     }, []);
 
-    // Determine which image to show based on theme and hydration state
-    // Default to darkImage on server to match defaultTheme="dark"
+    // Stable image selection logic
     const displayImage = !mounted
         ? (project.darkImage || project.image)
         : (resolvedTheme === "dark"
@@ -37,7 +32,7 @@ export function ProjectItem({
             : (project.lightImage || project.image));
 
     return (
-        <div className={className}>
+        <div className={className} suppressHydrationWarning>
             <div className="hover:bg-accent2">
                 <div>
                     <div className="flex w-full items-center gap-4 p-4 pr-2">
@@ -53,35 +48,50 @@ export function ProjectItem({
                             )}
                         </div>
 
-                        <Tooltip>
-                            <TooltipTrigger asChild>
-                                <a
-                                    className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
-                                    href={project.link}
-                                    target="_blank"
-                                    rel="noopener"
-                                >
-                                    <LinkIcon className="pointer-events-none size-4" />
-                                    <span className="sr-only">Open Project Link</span>
-                                </a>
-                            </TooltipTrigger>
+                        <div className="flex items-center gap-2">
+                            {/* Open Project Link */}
+                            <Tooltip>
+                                <TooltipTrigger asChild>
+                                    <a
+                                        className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener"
+                                        title={!mounted ? "Open Project Link" : undefined}
+                                    >
+                                        <LinkIcon className="pointer-events-none size-4" />
+                                        <span className="sr-only">Open Project Link</span>
+                                    </a>
+                                </TooltipTrigger>
+                                {mounted && (
+                                    <TooltipContent>
+                                        <p>Open Project Link</p>
+                                    </TooltipContent>
+                                )}
+                            </Tooltip>
 
-                            <TooltipContent>
-                                <p>Open Project Link</p>
-                            </TooltipContent>
-                        </Tooltip>
-
-                        <Link
-                            className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
-                            href={`/project/${project.id}`}
-                            title="View Project Details"
-                        >
-                            <ArrowRightIcon className="pointer-events-none size-4" />
-                            <span className="sr-only">View Project Details</span>
-                        </Link>
+                            {/* View Project Details Link */}
+                            <Tooltip>
+                                <TooltipTrigger asChild>
+                                    <Link
+                                        className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
+                                        href={`/project/${project.id}`}
+                                        title={!mounted ? "View Project Details" : undefined}
+                                    >
+                                        <ArrowRightIcon className="pointer-events-none size-4" />
+                                        <span className="sr-only">View Project Details</span>
+                                    </Link>
+                                </TooltipTrigger>
+                                {mounted && (
+                                    <TooltipContent>
+                                        <p>View Project Details</p>
+                                    </TooltipContent>
+                                )}
+                            </Tooltip>
+                        </div>
                     </div>
 
-                    {/* Project Image - Always Visible if displayImage exists */}
+                    {/* Project Image */}
                     {displayImage && (
                         <div className="border-t border-edge">
                             <div className="p-4">
@@ -100,10 +110,10 @@ export function ProjectItem({
                         </div>
                     )}
 
-                    {/* Description - Enhanced Readability */}
+                    {/* Description */}
                     {project.description && (
                         <div className="border-t border-edge">
-                            <div className="p-4 space-y-3">
+                            <div className="p-4 space-y-3" suppressHydrationWarning>
                                 {/* Status Indicator */}
                                 {project.isLive !== undefined && (
                                     <div className="flex items-center gap-2">
