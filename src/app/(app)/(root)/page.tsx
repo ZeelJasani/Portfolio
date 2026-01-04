@@ -66,6 +66,7 @@ function getPageJsonLd(): WithContext<PageSchema> {
 function Separator({ className }: { className?: string }) {
   return (
     <div
+      suppressHydrationWarning
       className={cn(
         "relative flex h-8 w-full border-x border-edge",
         "before:absolute before:-left-[100vw] before:-z-1 before:h-8 before:w-[200vw]",

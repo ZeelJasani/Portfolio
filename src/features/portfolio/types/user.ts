@@ -6,9 +6,9 @@ export type User = {
   /** Handle/username used in links or mentions */
   username: string;
   /** e.g. "male", "female", "non-binary" */
-  gender: string;
+  gender?: string;
   /** e.g. "he/him", "she/her", "they/them" */
-  pronouns: string;
+  pronouns?: string;
   bio: string;
   /** Short phrases rotated in UI (e.g., homepage flip effect) */
   flipSentences: string[];
@@ -19,7 +19,7 @@ export type User = {
   /** base64 encoded (https://t.io.vn/base64-string-converter) */
   email: string;
   /** Personal/homepage URL */
-  website: string;
+  website?: string;
   /** Primary/current role shown on profile */
   jobTitle: string;
   /** Work history entries */

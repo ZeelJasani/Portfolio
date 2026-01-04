@@ -5,8 +5,8 @@ export const USER: User = {
   lastName: "Jasani",
   displayName: "Zeel Jasani",
   username: "ZeelXCode",
-  gender: "male",
-  pronouns: "he/him",
+  // gender: "male",
+  // pronouns: "he/him",
   bio: "I build software that makes ideas work in the real world.",
   flipSentences: [
     "Software Developer",
@@ -18,19 +18,11 @@ export const USER: User = {
 
   address: "India, Junagadh",
   phoneNumber: "+91 9316293722", // E.164 format
-  email: "jasanizeel487@gmail.com", // plain text
-  website: "https://zeeljasani.vercel.app",
+  email: "jasanizeel487@gmail.com",
+  // website: "https://zeeljasani.vercel.app",
   jobTitle: "Software Developer",
   jobs: [],
-  about: `
-I'm a **Software Developer** who enjoys building things that feel useful, smooth, and meaningful. I love working on web applications, mobile apps, and anything that allows me to turn an idea into something people can actually use.
-
-I work across the **full stack**, and I enjoy both sides of development creating clean, intuitive interfaces and designing backend systems that are stable, secure, and scalable. Solving real problems through code is something that genuinely motivates me, and I'm always learning, experimenting, and improving my approach.
-
-I'm also exploring **Artificial Intelligence and Machine Learning**, trying to understand how intelligent systems can make everyday products smarter and more impactful. My long-term goal is to grow into a well-rounded engineer who can build complete solutions, from web to mobile, while integrating modern AI wherever it makes sense.
-
-I'm open to **internships**, **collaborations**, **freelance opportunities**, and anything that helps me grow, learn, and build better products.
-`,
+  about: `I am a software developer focused on building clean, scalable web and mobile applications. I enjoy turning ideas into real products and am exploring AI and Machine Learning to create more intelligent solutions. Open to internships, collaborations, and freelance work.`,
   avatar: "/images/ZeelJasani.jpg",
   ogImage: "/images/ZeelJasani.jpg",
   timeZone: "Asia/Kolkata",

@@ -7,6 +7,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Provider as JotaiProvider } from "jotai";
 import { ThemeProvider } from "next-themes";
 
+import { TooltipProvider } from "./ui/tooltip";
 import { Toaster } from "./ui/sonner";
 
 export function Providers({ children }: { children: React.ReactNode }) {
@@ -27,7 +28,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
             delay={500}
             options={{ showSpinner: false }}
           >
-            {children}
+            <TooltipProvider>
+              {children}
+            </TooltipProvider>
           </AppProgressProvider>
 
           <Toaster position="top-center" />

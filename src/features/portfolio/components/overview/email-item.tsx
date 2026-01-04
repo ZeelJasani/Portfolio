@@ -20,13 +20,13 @@ type EmailItemProps = {
 export function EmailItem({ email }: EmailItemProps) {
   const isClient = useIsClient();
   const emailDecoded = decodeEmail(email);
-  
-  const handleEmailClick = (e: React.MouseEvent) => {
+
+  const handleEmailClick = async (e: React.MouseEvent) => {
     e.preventDefault();
-    
+
     if (isClient) {
-      // Open Gmail compose in new tab
-      window.open(`https://mail.google.com/mail/?view=cm&to=${encodeURIComponent(emailDecoded)}`, '_blank');
+      await navigator.clipboard.writeText(emailDecoded);
+      toast.success("Email copied to clipboard!");
     }
   };
 
@@ -38,10 +38,10 @@ export function EmailItem({ email }: EmailItemProps) {
 
       <IntroItemContent>
         <IntroItemLink
-          href="#"
+          href={isClient ? `mailto:${emailDecoded}` : "#"}
           onClick={handleEmailClick}
           aria-label={
-            isClient ? `Send email to ${emailDecoded} via Gmail` : "Email address"
+            isClient ? `Copy email ${emailDecoded} to clipboard` : "Email address"
           }
         >
           {isClient ? emailDecoded : "[Email protected]"}

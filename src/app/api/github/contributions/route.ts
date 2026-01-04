@@ -150,9 +150,9 @@ export async function POST(request: Request) {
     }
 
     const query = `
-      query($username: String!) {
+      query($username: String!, $from: DateTime!, $to: DateTime!) {
         user(login: $username) {
-          contributionsCollection {
+          contributionsCollection(from: $from, to: $to) {
             contributionCalendar {
               totalContributions
               weeks {
@@ -177,7 +177,11 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         query,
-        variables: { username },
+        variables: {
+          username,
+          from: "2026-01-01T00:00:00Z",
+          to: "2026-12-31T23:59:59Z"
+        },
       }),
     })
 
@@ -208,8 +212,9 @@ export async function POST(request: Request) {
         color: day.color,
         contributionLevel: day.contributionLevel,
       }))
+      .filter(day => day.date.startsWith('2026'))
 
-    return NextResponse.json({ 
+    return NextResponse.json({
       contributions,
       total: data.user.contributionsCollection.contributionCalendar.totalContributions
     })

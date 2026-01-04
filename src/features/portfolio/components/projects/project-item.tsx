@@ -57,17 +57,14 @@ export function ProjectItem({
                                         href={project.link}
                                         target="_blank"
                                         rel="noopener"
-                                        title={!mounted ? "Open Project Link" : undefined}
                                     >
                                         <LinkIcon className="pointer-events-none size-4" />
                                         <span className="sr-only">Open Project Link</span>
                                     </a>
                                 </TooltipTrigger>
-                                {mounted && (
-                                    <TooltipContent>
-                                        <p>Open Project Link</p>
-                                    </TooltipContent>
-                                )}
+                                <TooltipContent>
+                                    <p>Open Project Link</p>
+                                </TooltipContent>
                             </Tooltip>
 
                             {/* View Project Details Link */}
@@ -76,17 +73,14 @@ export function ProjectItem({
                                     <Link
                                         className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
                                         href={`/project/${project.id}`}
-                                        title={!mounted ? "View Project Details" : undefined}
                                     >
                                         <ArrowRightIcon className="pointer-events-none size-4" />
                                         <span className="sr-only">View Project Details</span>
                                     </Link>
                                 </TooltipTrigger>
-                                {mounted && (
-                                    <TooltipContent>
-                                        <p>View Project Details</p>
-                                    </TooltipContent>
-                                )}
+                                <TooltipContent>
+                                    <p>View Project Details</p>
+                                </TooltipContent>
                             </Tooltip>
                         </div>
                     </div>
