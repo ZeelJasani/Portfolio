@@ -1,11 +1,5 @@
 import type { Project } from "../types/projects";
 
-// To add a new project:
-// 1. Add a new object to the PROJECTS array.
-// 2. Ensure it has a unique 'id'.
-// 3. Fill in the title, tagline, link, skills, description, logo, and image.
-// 4. Place the logo image in 'public/images/' and reference it in the 'logo' field.
-// 5. Place the project screenshot/image in 'public/images/' and reference it in the 'image' field.
 
 export const PROJECTS: Project[] = [
   {
@@ -58,9 +52,8 @@ export const PROJECTS: Project[] = [
     ],
     description: `A modern, full-stack Learning Management System (LMS) built with cutting-edge web technologies. Features secure authentication, course management, rich content editing, file uploads with S3, admin dashboard, and integrated Stripe payments. Built with Next.js 15, TypeScript, Prisma, and PostgreSQL.`,
     logo: "/images/masterji.svg",
-    // image: "/images/Learnix.png",
-    lightImage: "/images/learnix-light.png",
-    darkImage: "/images/learnix-dark.png",
+    lightImage: "/images/projects/learnix-light.png",
+    darkImage: "/images/projects/learnix-dark.png",
     isLive: true,
   },
   {
@@ -111,9 +104,8 @@ export const PROJECTS: Project[] = [
     ],
     description: `Notiva is a minimal, high-performance note-taking platform designed specifically for developers. It bridges the gap between traditional text editors and powerful IDEs, offering a block-based workflow that mirrors how programmers structure their thoughts. Features keyboard-first navigation, slash commands, advanced code blocks, and infinite nested hierarchy.`,
     logo: "/images/notiva.png",
-    // image: "/images/notiva.png",
-    lightImage: "/images/notiva-light.png",
-    darkImage: "/images/notiva-dark.png",
+    lightImage: "/images/projects/notiva-light.png",
+    darkImage: "/images/projects/notiva-dark.png",
     isLive: true,
   },
   {
