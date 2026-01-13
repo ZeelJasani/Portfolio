@@ -1,0 +1,71 @@
+---
+title: SyntaxShot - Create stunning code snippets and browser mockups
+description: A beautiful, feature-rich tool for creating professional-grade images from your code and screenshots with a highly customizable studio interface.
+---
+
+## Overview
+
+SyntaxShot is a beautiful, feature-rich tool designed for developers and designers who want to create stunning code snippets and browser mockups. In a world where visual presentation matters as much as the code itself, SyntaxShot provides a seamless studio experience that transforms raw code and static screenshots into shareable, professional-grade images.
+
+**The Vision:** To provide the most intuitive and powerful customization engine for developer-focused visuals. Whether you're sharing a clever algorithm on Twitter or showcasing a new web feature in a presentation, SyntaxShot ensures your work looks pixel-perfect.
+
+---
+
+## Technical Architecture
+
+**The Stack**
+
+SyntaxShot leverages the latest web technologies to deliver a high-performance, interactive editing experience. Built with **Next.js 15 (App Router)** and **React 19**, the application ensures a smooth, reactive UI. State management is handled by **Zustand**, providing a lightweight and predictable way to manage complex customization parameters across the studio interface.
+
+**Design & UI**
+
+The studio is styled with **Tailwind CSS**, featuring a modern, collapsible sidebar layout that maximizes the workspace while keeping controls accessible. The entire platform supports native dark and light modes, with icons provided by **Lucide React**.
+
+---
+
+## Core Features
+
+### 🖥️ Studio Interface
+- **Modern Sidebar Layout:** A clean, collapsible left sidebar gives you quick access to all controls.
+- **Responsive Design:** Fully responsive UI that works seamlessly on desktop and mobile.
+- **Dark/Light Mode:** Full theme support for a consistent aesthetic experience.
+
+### 🖼️ Browser Mockup
+- **Realistic macOS Frame:** Showcase your web projects in a pixel-perfect macOS Safari browser window.
+- **Editable Address Bar:** Custom URL support for realistic presentation.
+- **Security Indicator:** Toggle-able encryption lock icon.
+- **Independent Window Theme:** Switch the browser mockup between Light and Dark modes regardless of the application's theme.
+
+### 💻 Code Snippet Engine
+- **Accurate Syntax Highlighting:** Support for dozens of popular programming languages.
+- **Premium Themes:** Includes Atom One Dark, Dracula, GitHub Dark, and more.
+- **Developer Fonts:** Support for JetBrains Mono, Fira Code, and Geist Mono.
+
+### 🎨 Customization Options
+- **Dynamic Backgrounds:** Support for solid colors, vibrant gradients, or transparency.
+- **Window Controls:** Choose between macOS (Traffic Lights), Windows, or None.
+- **Precision Adjustments:** Fine-tune padding, drop shadows, and corner radius for the perfect look.
+
+---
+
+## Technical Accomplishments
+
+**State Persistence & Fluidity**
+
+*Challenge:* Managing dozens of independent customization settings (colors, padding, themes, fonts) without degrading performance or losing user state.
+
+*Implementation:* Utilized Zustand with persistent middleware to ensure the user's studio preferences are saved locally. Implemented optimized re-renders so that changing a single property like "roundness" feels instantaneous even with complex code highlighting active.
+
+**Canvas Rendering Accuracy**
+
+*Challenge:* Ensuring that the complex CSS-based mockup translates perfectly to an exported image format.
+
+*Implementation:* Engineered a layered rendering system where the browser frame, window controls, and code block are treated as independent CSS-modular components. This approach ensures consistent layout regardless of the aspect ratio or resolution of the final export.
+
+---
+
+**Technologies:** Next.js 15 · React 19 · Tailwind CSS · Zustand · Lucide React · TypeScript · CSS Modules
+
+---
+
+*Transforming code into art with SyntaxShot.*

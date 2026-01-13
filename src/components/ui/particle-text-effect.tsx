@@ -77,10 +77,10 @@ class Particle {
     }
 
     if (drawAsPoints) {
-      ctx.fillStyle = `rgb(${currentColor.r}, ${currentColor.g}, ${currentColor.b})` 
+      ctx.fillStyle = `rgb(${currentColor.r}, ${currentColor.g}, ${currentColor.b})`
       ctx.fillRect(this.pos.x, this.pos.y, 2, 2)
     } else {
-      ctx.fillStyle = `rgb(${currentColor.r}, ${currentColor.g}, ${currentColor.b})` 
+      ctx.fillStyle = `rgb(${currentColor.r}, ${currentColor.g}, ${currentColor.b})`
       ctx.beginPath()
       ctx.arc(this.pos.x, this.pos.y, this.particleSize / 2, 0, Math.PI * 2)
       ctx.fill()
@@ -132,7 +132,7 @@ interface ParticleTextEffectProps {
   className?: string
 }
 
-const DEFAULT_WORDS = ["ZEEL", "JASANI"]
+const DEFAULT_WORDS = ["ZEEL JASANI"]
 
 export function ParticleTextEffect({ words = DEFAULT_WORDS, className }: ParticleTextEffectProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -182,9 +182,9 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS, className }: Particl
     const pixels = imageData.data
 
     const newColor = {
-      r: Math.floor(Math.random() * 155) + 100, 
-      g: Math.floor(Math.random() * 155) + 100, 
-      b: Math.floor(Math.random() * 155) + 100, 
+      r: Math.floor(Math.random() * 155) + 100,
+      g: Math.floor(Math.random() * 155) + 100,
+      b: Math.floor(Math.random() * 155) + 100,
     }
 
     const particles = particlesRef.current
@@ -197,7 +197,7 @@ export function ParticleTextEffect({ words = DEFAULT_WORDS, className }: Particl
 
     for (let i = coordsIndexes.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1))
-      ;[coordsIndexes[i], coordsIndexes[j]] = [coordsIndexes[j], coordsIndexes[i]]
+        ;[coordsIndexes[i], coordsIndexes[j]] = [coordsIndexes[j], coordsIndexes[i]]
     }
 
     for (const coordIndex of coordsIndexes) {
